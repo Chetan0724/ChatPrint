@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Upload, FileText, Download, Check } from 'lucide-react';
+import { Upload, Download, Check } from 'lucide-react';
 import { format, parse, isValid } from 'date-fns';
 import jsPDF from 'jspdf';
 
@@ -189,7 +189,7 @@ function App() {
         const xPosition = message.isSent ? pageWidth - margin - bubbleWidth : margin;
 
         // Draw message bubble
-        pdf.setFillColor(...bubbleColor);
+        pdf.setFillColor(bubbleColor[0], bubbleColor[1], bubbleColor[2]);
         pdf.roundedRect(xPosition, yPosition - 15, bubbleWidth, bubbleHeight, 3, 3, 'F');
 
         // Add sender name for received messages
